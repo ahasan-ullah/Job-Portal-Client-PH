@@ -7,14 +7,14 @@ const routes=createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
-    errorElement: <h2>Route not found</h2>,
+    // errorElement: <h2>Route not found</h2>,
     children:[
       {
         path: '/',
         element: <Home></Home>
       },
       {
-        path: 'register',
+        path: '/register',
         element: <Register></Register>
       }
     ]
