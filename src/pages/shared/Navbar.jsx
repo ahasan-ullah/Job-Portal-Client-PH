@@ -32,16 +32,16 @@ const Navbar = () => {
               
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">daisyUI</a>
+          <a className="btn btn-ghost text-xl">Job-Portal</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             
           </ul>
         </div>
-        <div className="navbar-end">
-          <Link to="/register">Register</Link>
-          <a className="btn">Sign In</a>
+        <div className="navbar-end space-x-3">
+          <Link className="btn" to="/register">Register</Link>
+          <Link to="/login" className="btn">Sign In</Link>
         </div>
       </div>
     </div>
