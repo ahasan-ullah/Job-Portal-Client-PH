@@ -48,7 +48,7 @@ const Navbar = () => {
           <h3 className="text-3xl">Job Portal</h3></a>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
+          <ul className="menu menu-horizontal px-1 space-x-3">
             {links}
           </ul>
         </div>

@@ -2,7 +2,7 @@ import { FaDollarSign, FaMapMarkerAlt } from "react-icons/fa";
 
 const HotJobCard = ({ job }) => {
   return (
-    <div className="card card-compact bg-base-100 shadow-xl">
+    <div className="card card-compact bg-base-200">
       <div className="flex gap-2 m-2">
         <figure>
           <img className="w-[52px]" src={job.company_logo} alt="Shoes" />
@@ -18,7 +18,7 @@ const HotJobCard = ({ job }) => {
       <div className="card-body">
         <h2 className="card-title">
           {job.title}
-          <div className="badge badge-error">NEW</div>
+          <div className="badge badge-error ">NEW</div>
         </h2>
         <p>{job.description}</p>
         <div className="flex gap-2 flex-wrap p-1">
