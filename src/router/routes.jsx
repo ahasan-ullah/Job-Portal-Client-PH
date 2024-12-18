@@ -3,26 +3,38 @@ import MainLayout from "../layout/MainLayout";
 import Home from "../pages/Home/Home";
 import Register from "../pages/Register/Register";
 import SignIn from "../pages/SignIn/SignIn";
+import JobDetails from "../pages/JobDetails/JobDetails";
+import PrivateRoutes from "./PrivateRoutes";
 
-const routes=createBrowserRouter([
+const routes = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
     // errorElement: <h2>Route not found</h2>,
-    children:[
+    children: [
       {
-        path: '/home',
-        element: <Home></Home>
+        path: "/",
+        element: <Home></Home>,
       },
       {
-        path: '/register',
-        element: <Register></Register>
+        path: "/jobs/:id",
+        element: (
+          <PrivateRoutes>
+            <JobDetails></JobDetails>
+          </PrivateRoutes>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/jobs/${params.id}`),
       },
       {
-        path: '/login',
-        element: <SignIn></SignIn>
-      }
-    ]
-  }
+        path: "/register",
+        element: <Register></Register>,
+      },
+      {
+        path: "/login",
+        element: <SignIn></SignIn>,
+      },
+    ],
+  },
 ]);
 export default routes;

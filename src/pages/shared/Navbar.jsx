@@ -6,9 +6,9 @@ import logo from '../../assets/job-logo.png'
 const Navbar = () => {
   const { user,signOutUser } = useContext(AuthContext);
   const links = <>
-    <li><NavLink to="/home">Home</NavLink></li>
-    <li><NavLink to="/home">Home</NavLink></li>
-    <li><NavLink to="/home">Home</NavLink></li>
+    <li><NavLink to="/">Home</NavLink></li>
+    <li><NavLink to="/">Home</NavLink></li>
+    <li><NavLink to="/">Home</NavLink></li>
   </>;
 
   const handleSignOut=()=>{
