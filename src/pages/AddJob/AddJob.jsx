@@ -1,27 +1,37 @@
 import { useContext } from "react";
 import AuthContext from "../../context/AuthContext/AuthContext";
+import Swal from "sweetalert2";
 
 const AddJob = () => {
-  const {user}=useContext(AuthContext);
-  const handleAddJob=(e)=>{
+  const { user } = useContext(AuthContext);
+  const handleAddJob = (e) => {
     e.preventDefault();
-    const formData=new FormData(e.target);
-    const initialData=Object.fromEntries(formData.entries());
-    const {min,max,currency, ...newJob}=initialData;
-    newJob.salaryRange={min,max,currency};
-    newJob.requirements=newJob.requirements.split('\n');
-    newJob.responsibilities=newJob.responsibilities.split('\n');
+    const formData = new FormData(e.target);
+    const initialData = Object.fromEntries(formData.entries());
+    const { min, max, currency, ...newJob } = initialData;
+    newJob.salaryRange = { min, max, currency };
+    newJob.requirements = newJob.requirements.split("\n");
+    newJob.responsibilities = newJob.responsibilities.split("\n");
 
-    fetch('',{
+
+    fetch('http://localhost:5000/jobs', {
       method: 'POST',
       headers: {
-        'content-type': 'application/json'
+        'content-type': 'application/json',
       },
-      body: JSON.stringify(newJob);
+      body: JSON.stringify(newJob),
     })
-    .then(res=>rse.json())
-    .then(data=>console.log(data));
-  }
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+          Swal.fire({
+            title: "Job added!",
+            text: "You clicked the button!",
+            icon: "success",
+          });
+        }
+      })
+  };
   return (
     <div>
       <form onSubmit={handleAddJob} className="card-body">
