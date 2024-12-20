@@ -1,9 +1,11 @@
 import { useContext } from "react";
 import AuthContext from "../../context/AuthContext/AuthContext";
 import Swal from "sweetalert2";
+import { Navigate } from "react-router-dom";
 
 const AddJob = () => {
   const { user } = useContext(AuthContext);
+  
   const handleAddJob = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -29,6 +31,7 @@ const AddJob = () => {
             text: "You clicked the button!",
             icon: "success",
           });
+          //navigate('/myPostedJobs');
         }
       })
   };
