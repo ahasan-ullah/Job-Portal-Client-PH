@@ -9,8 +9,8 @@ const MyApplications = () => {
   const axiosSecure=useAxiosSecure();
 
   useEffect(() => {
-    // fetch(`http://localhost:5000/job-application?email=${user.email}`)
-    // axios.get(`http://localhost:5000/job-application?email=${user.email}`,{withCredentials:true})
+    // fetch(`https://job-portal-server-p2m3achpu-ahasan-ullahs-projects.vercel.app/job-application?email=${user.email}`)
+    // axios.get(`https://job-portal-server-p2m3achpu-ahasan-ullahs-projects.vercel.app/job-application?email=${user.email}`,{withCredentials:true})
     //   .then((data) => setJobs(data.data));
 
     axiosSecure.get(`/job-application?email=${user.email}`).then((data) => setJobs(data.data));
