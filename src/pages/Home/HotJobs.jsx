@@ -4,7 +4,7 @@ import HotJobCard from "./HotJobCard";
 const HotJobs=()=>{
   const [jobs,setJobs]=useState([]);
   useEffect(()=>{
-    fetch('https://job-portal-server-p2m3achpu-ahasan-ullahs-projects.vercel.app/jobs')
+    fetch('http://localhost:5000/jobs')
     .then(res=>res.json())
     .then(data=>setJobs(data));
   },[])
