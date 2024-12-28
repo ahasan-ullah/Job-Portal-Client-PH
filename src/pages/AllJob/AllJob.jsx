@@ -20,7 +20,9 @@ const AllJob = () => {
           }
         </button>
         <BiSearch className="text-4xl"></BiSearch>
-        <input className="input w-full max-w-2xl" type="text" placeholder="Serach Jobs By Location"/>
+        <input
+        onKeyUp={(e)=>{setSearch(e.target.value)}}
+        className="input w-full max-w-2xl" type="text" placeholder="Serach Jobs By Location"/>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 my-8">
         {
